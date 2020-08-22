@@ -1,0 +1,83 @@
+{
+  "env": {
+    "es2020": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "camelcase": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx", ".ts"]
+      }
+    ],
+    "react/prop-types": [
+      1,
+      {
+        "ignore": ["children"]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-duplicates": 0,
+    "no-unused-expressions": 0,
+    // [
+    //   "error",
+    //   {
+    //     "allowTernary": true,
+    //     "allowShortCircuit": true,
+    //   }
+    // ],
+
+    // May break the linter (still experimenting):
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "enforce",
+        "custom": "ignore",
+        "explicitSpread": "enforce",
+        "exceptions": []
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
